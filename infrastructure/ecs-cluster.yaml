@@ -104,7 +104,6 @@ Resources:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
       ImageId: !Ref ECSAMI
-      KeyName: 'jenkins'
       InstanceType: !Ref InstanceType
       SecurityGroups:
       - !Ref SecurityGroup

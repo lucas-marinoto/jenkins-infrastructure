@@ -68,8 +68,8 @@ Resources:
           ContainerPath: /var/jenkins_home
         Essential: true
         Image: !Ref JenkinsImage
-        Cpu: 2048
-        MemoryReservation: 4096
+        Cpu: 512
+        Memory: 1024
         PortMappings:
         - ContainerPort: 8080
           HostPort: 8080
@@ -86,7 +86,7 @@ Resources:
     Type: AWS::Logs::LogGroup
     Properties:
       LogGroupName: !Ref AWS::StackName
-      RetentionInDays: 365
+      RetentionInDays: 7
 
   TargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
